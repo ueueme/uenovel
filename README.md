@@ -1,4 +1,4 @@
-# 易悦轻小说
+![02518B24](https://github.com/user-attachments/assets/ef402301-8099-4165-80b9-937a8ac2d369)# 易悦轻小说
 
 易悦轻小说是一个基于 Vue.js 的移动端小说阅读应用。该应用提供了一个用户友好的界面，允许用户阅读各种类型的小说。
 
@@ -61,3 +61,12 @@ git clone https://github.com/your-username/your-project.git
 拷贝 public 文件夹的后端代码运行
 
 ```
+
+部署静态网页 后续问题及解决方案介绍
+部署完毕后项目正常运转，但是在我们自己的路由页面中刷新，会导致去到404界面。解决方案如下
+在项目根目录创建文件 netlify.toml 文件。（如果你最终打包后的文件里面不是index.html请你更改为你定义的名字）内容如下：
+  [[redirects]]
+  	  from="/*"
+  	  to="/index.html"
+  	  status=200
+完成上面创建文件操作后提交代码进行自动化部署，然后测试即可。
